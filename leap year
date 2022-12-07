@@ -1,0 +1,27 @@
+year = [int(i) for i in input("Enter starting year:").split('/')]
+year2=[int(i) for i in input("Enter ending year:").split('/')]
+
+if (year[1]>=1 and year[1]<=12) and (year2[1]>=1 and year2[1]<=12):
+    print("Valid dates entered : \n starting the program...")
+else:
+    print("Please enter valid dates:")
+    year = [int(i) for i in input("Enter starting year:").split('/')]
+    year2 = [int(i) for i in input("Enter ending year:").split('/')]
+
+s = []
+b = []
+a1 = year[2]
+a2 = year2[2]
+for i in range(a1,a2+1):
+    if i%4==0:
+        if i%100 !=0:
+            s.append(i)
+        elif i%100==0:
+            if i%400==0:
+                s.append(i)
+            else:
+                b.append(i)
+    else:
+        b.append(i)
+print("leap year:",s)
+print("non leap year:",b)
